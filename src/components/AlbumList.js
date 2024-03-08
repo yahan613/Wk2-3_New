@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, Linking } from 'react-native';
+import AlbumData from "./AlbumData.json"
 
 const AlbumList = () => {
     return (
@@ -7,46 +8,35 @@ const AlbumList = () => {
             <Text style={styles.title}>Album</Text>
             <ScrollView contentContainerStyle={styles.containerlist}>
                 <View style={styles.item}>
-                    <Text style={styles.albumtext}>Proof</Text>
+                    <Text style={styles.albumtext}>{AlbumData[0].albumName}</Text>
                     <Image
-                        source={{ uri: 'https://upload.wikimedia.org/wikipedia/zh/6/6f/BTS_Proof_album_cover_art.jpg' }}
+                        source={{ uri: AlbumData[0].image }}
                         style={styles.image}
                     />
                 </View>
                 <View style={styles.item}>
-                    <Text style={styles.albumtext}>BE</Text>
+                    <Text style={styles.albumtext}>{AlbumData[1].albumName}</Text>
                     <Image
-                        source={{ uri: 'https://upload.wikimedia.org/wikipedia/zh/f/f5/Bts_be_cover.jpg' }}
+                        source={{ uri: AlbumData[1].image }}
                         style={styles.image}
                     />
                 </View>
                 <View style={styles.item}>
-                    <Text style={styles.albumtext}>Map of the Soul: Persona</Text>
+                    <Text style={styles.albumtext}>{AlbumData[2].albumName}</Text>
                     <Image
-                        source={{ uri: 'https://upload.wikimedia.org/wikipedia/zh/3/36/Map_of_the_Soul_-_Persona.png' }}
+                        source={{ uri: AlbumData[2].image }}
                         style={styles.image}
                     />
                 </View>
                 <View style={styles.item}>
-                    <Text style={styles.albumtext}>花樣年華 Young Forever</Text>
+                    <Text style={styles.albumtext}>{AlbumData[2].albumName}</Text>
                     <Image
-                        source={{ uri: 'https://upload.wikimedia.org/wikipedia/zh/thumb/9/94/BTS_Hwayang-yeonhwa_Young_Forever.jpg/220px-BTS_Hwayang-yeonhwa_Young_Forever.jpg' }}
+                        source={{ uri: AlbumData[3].image }}
                         style={styles.image}
                     />
                 </View>
             </ScrollView>
-            <TouchableOpacity style={styles.button} onPress={() => Linking.openURL('https://www.google.com/search?q=bts+album&rlz=1C1CHBF_zh-TWTW1000TW1000&oq=BTS&gs_lcrp=EgZjaHJvbWUqDggBEEUYJxg7GIAEGIoFMg4IABBFGCcYOxiABBiKBTIOCAEQRRgnGDsYgAQYigUyBggCEEUYOzIGCAMQRRg8MgYIBBBFGDwyBggFEEUYPTIGCAYQRRg8MgYIBxBFGEHSAQgzMjgwajBqN6gCALACAA&sourceid=chrome&ie=UTF-8#wgvs=e')}>
-                <Text style={{
-                    backgroundColor: '#D2D2D0',
-                    fontSize: 18,
-                    width: '100%',
-                    height: 40,
-                    textAlignVertical: "center",
-                    textAlign: "center",
-                    color: '#fff',
-                    fontWeight: 'bold',
-                }}>View More Album</Text>
-            </TouchableOpacity>
+
         </View>
     )
 }
@@ -64,7 +54,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'flex-start',
         marginBottom: 15,
-        justifyContent:"center",
+        justifyContent: "center",
     },
     item: {
         width: '47%',
